@@ -73,11 +73,13 @@ public class Cafeteria {
     public void listarClientes() {
         if (this.contClientes == 0) {
             System.out.println("No hay clientes registrados");
+            System.out.println(" ");
             return;
         }
 
         for (int i = 0; i < this.contClientes; i++) {
-           this.clientes[i].mostrarInfo();;
+            System.out.println("===== Información de clientes =====");
+            this.clientes[i].mostrarInfo();;
         }
     }
 

@@ -3,18 +3,24 @@ import java.util.Scanner;
 public class MenuCafeteria {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
+
         Cafeteria cafeteria = new Cafeteria("el sabor de la exclavitud", "unipampliona", 100);
 
         int opcionPrincipal;
         do {
-            System.out.println("\n=== Menú Principal Cafetería ===");
+         
+            System.out.println("\n==========================================================");
+            System.out.println("=== Menú Principal Cafetería " + cafeteria.getNombre()+ " ===");
+            System.out.println("==========================================================");
             System.out.println("1. Gestión de Clientes");
             System.out.println("2. Gestión de Productos");
             System.out.println("3. Gestión de Pedidos");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcionPrincipal = input.nextInt();
-            input.nextLine(); // Limpiar buffer
+            input.nextLine();
+            System.out.println("________________________");
 
             switch (opcionPrincipal) {
                 case 1:
