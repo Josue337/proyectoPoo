@@ -16,7 +16,7 @@ public class Cliente {
     System.out.println("Id: @" + this.id);
     System.out.println("Correo: " + this.correo);
     System.out.println("___________________________");
-    }
+    2}
 
     public String getNombre() {
         return nombre;

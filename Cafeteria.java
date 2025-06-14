@@ -77,7 +77,7 @@ public class Cafeteria {
         }
 
         for (int i = 0; i < this.contClientes; i++) {
-            System.out.println(this.clientes[i]);
+           this.clientes[i].mostrarInfo();;
         }
     }
 
@@ -171,7 +171,7 @@ public class Cafeteria {
 
         System.out.println("===== Información de Productos =====");
         for (int i = 0; i < this.contProductos; i++) {
-            System.out.println(this.productos[i]);
+            this.productos[i].mostrarDetalles();
         }
     }
 
@@ -283,6 +283,47 @@ public class Cafeteria {
             }
         }
         System.out.println("Pedido no encontrado");
+    }
+
+    public void listarPedidos(){
+         if (this.contPedidos == 0) {
+            System.out.println("No hay pedidos registrados");
+            return;
+        }
+
+        System.out.println("===== Información de pedidos =====");
+        for (int i = 0; i < this.contPedidos; i++) {
+            System.out.println(this.pedidos[i].getCliente().getNombre());
+            System.out.println(this.pedidos[i].getCliente().getId());
+            System.out.println(this.pedidos[i].getFecha());
+            System.out.println("____________________________");
+        }
+    }
+
+    public void cobrarPedido(Scanner input) {
+    if (this.contPedidos == 0) {
+        System.out.println("No hay pedidos registrados");
+        return;
+    }
+
+    System.out.println("Ingrese el id del cliente para cobrar su pedido:");
+    String id = input.nextLine();
+
+    for (int i = 0; i < this.contPedidos; i++) {
+        Pedido pedido = this.pedidos[i];
+        if (pedido.getCliente().getId().equals(id)) {
+            double total = 0;
+            Producto[] productos = pedido.getProductos();
+            for (Producto producto : productos) {
+                if (producto != null) {
+                    total += producto.getPrecio();
+                }
+            }
+            System.out.println("El total a pagar es: $" + total);
+            return;
+        }
+    }
+    System.out.println("Pedido no encontrado para el cliente indicado.");
     }
 
     public String getNombre() {
