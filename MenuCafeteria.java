@@ -16,6 +16,7 @@ public class MenuCafeteria {
             System.out.println("1. Gestión de Clientes");
             System.out.println("2. Gestión de Productos");
             System.out.println("3. Gestión de Pedidos");
+            System.out.println("4. Descripcion de la cafeteria");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcionPrincipal = input.nextInt();
@@ -32,6 +33,9 @@ public class MenuCafeteria {
                 case 3:
                     menuPedidos(cafeteria, input);
                     break;
+                case 4:
+                    mostrarDescripcionCafeteria();
+                    break;
                 case 0:
                     System.out.println("¡Hasta luego!");
                     break;
@@ -41,6 +45,18 @@ public class MenuCafeteria {
         } while (opcionPrincipal != 0);
 
         input.close();
+    }
+
+    public static void mostrarDescripcionCafeteria(){
+        System.out.println("""
+\nBienvenidos a "Sabor de la Exclavitud", la cafetería hecha por negros, para negros. Aquí, cada taza de café te lleva de vuelta a nuestras raícesafricanas, recordándote de dónde venimos y lo que hemos superado.
+
+Todo nuestro café es recolectado, tostado y molido por manos negras. Desde la plantación hasta tu taza, cada grano lleva el sudor y la resistencia de nuestra gente. Nuestro menú ofrece delicias auténticas, preparadas con ingredientes frescos y mucho amor.
+
+Al entrar, te sumerges en un ambiente auténticamente negro, decorado con arte africano y muebles hechos a mano. El aroma del café recién molido te transporta a las plantaciones de café de África, donde nuestra historia comenzó.
+
+Ven a "Sabor de la Exclavitud" y disfruta de un café que no solo sabe bien, sino que también te conecta con tu herencia. Apoya a una empresa negra, propiedad de negros, y celebra nuestra cultura y resistencia.
+                """);
     }
 
     public static void menuClientes(Cafeteria cafeteria, Scanner input) {
