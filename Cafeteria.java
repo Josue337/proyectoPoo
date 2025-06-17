@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.annotation.processing.Generated;
+
 public class Cafeteria {
     private String nombre;
     private String ubicacion;
@@ -88,7 +90,7 @@ public class Cafeteria {
             System.out.println("No hay espacio para productos");
             return;
         }
-
+        
         System.out.println("Ingresa el nombre: ");
         String nombre = input.nextLine();
         System.out.println("Ingrese el precio: ");

@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class MenuCafeteria {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-
         Cafeteria cafeteria = new Cafeteria("el sabor de la exclavitud", "unipampliona", 100);
 
         int opcionPrincipal;

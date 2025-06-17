@@ -39,8 +39,8 @@ public class Pedido {
                 System.out.println("Eliminado correctamente");
                 return;
             }
-            System.out.println("No existe el producto");
-        }    
+        } 
+        System.out.println("No existe el producto");   
     }
 
     public void listarProductos(){
@@ -89,7 +89,4 @@ public class Pedido {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
-    
-   
 }
